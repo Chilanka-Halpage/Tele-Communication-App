@@ -12,4 +12,8 @@
 
 7. Application.properties file in spring boot app contains all database configurations and accordingly they can be altered
 
-8. Angular source code does not contain the node_modules directory. Therefore, the npm install command can be used to install necessary packages. 
+8. Angular source code does not contain the node_modules directory. Therefore, the npm install command can be used to install necessary packages.
+
+9. Dump files contain DB table data.
+
+10. Running spring-boot-telecommunication-0.0.1-SNAPSHOT.jar is enough to run the app. 
