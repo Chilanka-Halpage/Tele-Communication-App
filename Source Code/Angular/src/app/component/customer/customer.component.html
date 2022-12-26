@@ -1,0 +1,55 @@
+<div class="container-md mt-100">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            {{isUpdate? 'Update Existing ' : 'Create New '}}Customer
+        </div>
+        <div class="card-body">
+            <form [formGroup]="customerForm">
+                <h5>{{isUpdate? 'Update ' : 'New '}}Customer Details</h5>
+                <mat-divider class="mat-divider"></mat-divider>
+                <br />
+                <div class="row">
+                    <mat-form-field appearance="outline" class="col-6">
+                        <mat-label>Account No.</mat-label>
+                        <input type="number" matInput formControlName="accNo" placeholder="80196177">
+                        <!-- <mat-error *ngIf="frequency.touched && frequency.errors?.required">This field is required
+                        </mat-error> -->
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="col-6">
+                        <mat-label>Name</mat-label>
+                        <input type="text" matInput formControlName="name" placeholder="Customer Name">
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="outline" class="col-6">
+                        <mat-label>NIC</mat-label>
+                        <input type="text" matInput formControlName="nic" placeholder="962710040V">
+                        <!-- <mat-error *ngIf="frequency.touched && frequency.errors?.required">This field is required
+                        </mat-error> -->
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="col-6">
+                        <mat-label>Contact Number</mat-label>
+                        <input type="number" matInput formControlName="contactNo" placeholder="0776551077">
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="outline" class="col-6">
+                        <mat-label>Address</mat-label>
+                        <input type="text" matInput formControlName="address" placeholder="962710040V">
+                        <!-- <mat-error *ngIf="frequency.touched && frequency.errors?.required">This field is required
+                        </mat-error> -->
+                    </mat-form-field>
+                </div>
+                <div class="d-flex flex-row-reverse my-0">
+                    <button type="submit" (click)="submitForm()" mat-raised-button color="primary" class="me-1"
+                        [disabled]="isProgressing">
+                        <span *ngIf="isProgressing" class="spinner-border spinner-border-sm mr-1"></span>
+                        Submit
+                    </button>
+                    <button (click)="resetForm()" type="button" mat-raised-button color="warn" mat-button
+                        class="mx-1">Reset Form</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

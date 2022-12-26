@@ -1,0 +1,58 @@
+<div class="container-md">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            Create New Package Activated
+        </div>
+        <div class="card-body">
+            <form [formGroup]="pkgActivationForm">
+                <h5>New Package Activated Details</h5>
+                <mat-divider class="mat-divider"></mat-divider>
+                <br />
+
+                <div class="row">
+                    <div formGroupName="customer">
+                        <mat-form-field appearance="outline" class="col-6">
+                            <mat-label>Account No.</mat-label>
+                            <input type="number" matInput formControlName="accNo" placeholder="80196177">
+                            <!-- <mat-error *ngIf="frequency.touched && frequency.errors?.required">This field is required
+                        </mat-error> -->
+                        </mat-form-field>
+                    </div>
+                    <mat-form-field appearance="outline" class="col-6">
+                        <mat-label>Package Name</mat-label>
+                        <input type="text" matInput formControlName="packageName" placeholder="Package Name">
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="outline" class="col-6">
+                        <mat-label>Description</mat-label>
+                        <input type="text" matInput formControlName="description" placeholder="description">
+                        <!-- <mat-error *ngIf="frequency.touched && frequency.errors?.required">This field is required
+                        </mat-error> -->
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="col-6">
+                        <mat-label>charge</mat-label>
+                        <input type="number" matInput formControlName="charge" placeholder="charge in rupees">
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="outline" class="col-6">
+                        <mat-label>Tax</mat-label>
+                        <input type="number" matInput formControlName="tax" placeholder="tax in rupees">
+                        <!-- <mat-error *ngIf="frequency.touched && frequency.errors?.required">This field is required
+                        </mat-error> -->
+                    </mat-form-field>
+                </div>
+                <div class="d-flex flex-row-reverse my-0">
+                    <button type="submit" (click)="submitForm()" mat-raised-button color="primary" class="me-1"
+                        [disabled]="isProgressing">
+                        <span *ngIf="isProgressing" class="spinner-border spinner-border-sm mr-1"></span>
+                        Submit
+                    </button>
+                    <button (click)="resetForm()" type="button" mat-raised-button color="warn" mat-button
+                        class="mx-1">Reset Form</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
